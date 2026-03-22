@@ -180,4 +180,3 @@ This project is open source and free to use for educational and research purpose
 ---
 
 ⭐ If you found this project helpful, please give it a star!
-<img width="1900" height="963" alt="Screenshot 2026-03-22 155830" src="https://github.com/user-attachments/assets/8b19bd13-a359-4506-b0fe-38f675b51b35" />
