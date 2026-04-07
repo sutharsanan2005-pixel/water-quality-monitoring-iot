@@ -8,7 +8,7 @@ A compact, PCB-based IoT system that continuously monitors water quality paramet
 
 This project designs and implements a PCB-based real-time water quality monitoring system targeting small-scale packaged drinking water industries. The system uses an **ESP32 microcontroller** to read data from **TDS**, and **Turbidity** sensors, calculates a **Water Quality Index (WQI)**, and transmits results to the **ThingSpeak cloud** via Wi-Fi. A **multi-level alarm system** (warning, critical, shutdown) triggers visual alerts and automatically isolates the water output using a **solenoid valve** during severe contamination events.
 
-**Keywords:** IoT, Water Quality Monitoring, ESP32, ThingSpeak, PCB Design, pH, TDS, Turbidity, Cloud Analytics
+**Keywords:** IoT, Water Quality Monitoring, ESP32, ThingSpeak, PCB Design, TDS, Turbidity, Cloud Analytics
 
 ---
 
