@@ -6,7 +6,7 @@ A compact, PCB-based IoT system that continuously monitors water quality paramet
 
 ## 📄 Abstract
 
-This project designs and implements a PCB-based real-time water quality monitoring system targeting small-scale packaged drinking water industries. The system uses an **ESP32 microcontroller** to read data from **pH**, **TDS**, and **Turbidity** sensors, calculates a **Water Quality Index (WQI)**, and transmits results to the **ThingSpeak cloud** via Wi-Fi. A **multi-level alarm system** (warning, critical, shutdown) triggers visual alerts and automatically isolates the water output using a **solenoid valve** during severe contamination events.
+This project designs and implements a PCB-based real-time water quality monitoring system targeting small-scale packaged drinking water industries. The system uses an **ESP32 microcontroller** to read data from **TDS**, and **Turbidity** sensors, calculates a **Water Quality Index (WQI)**, and transmits results to the **ThingSpeak cloud** via Wi-Fi. A **multi-level alarm system** (warning, critical, shutdown) triggers visual alerts and automatically isolates the water output using a **solenoid valve** during severe contamination events.
 
 **Keywords:** IoT, Water Quality Monitoring, ESP32, ThingSpeak, PCB Design, pH, TDS, Turbidity, Cloud Analytics
 
@@ -14,7 +14,7 @@ This project designs and implements a PCB-based real-time water quality monitori
 
 ## ✨ Features
 
-- Real-time monitoring of pH, TDS, and Turbidity
+- Real-time monitoring of TDS, and Turbidity
 - Water Quality Index (WQI) calculation from combined sensor data
 - Multi-level alarm system — Warning, Critical, and Shutdown levels
 - Automatic solenoid valve control during contamination events
@@ -28,7 +28,7 @@ This project designs and implements a PCB-based real-time water quality monitori
 
 To design and implement a PCB-based real-time water quality monitoring and multi-level alarm system that:
 
-- Measures pH, TDS, Turbidity, and Temperature continuously
+- Measures TDS, Turbidity, and Temperature continuously
 - Provides a compact and reliable PCB for sensor signal processing
 - Implements multi-level alarms for abnormal water conditions
 - Automatically isolates water output via solenoid valve on severe contamination
@@ -47,7 +47,6 @@ Small-scale packaged drinking water industries lack an affordable, compact, and 
 | Component | Role |
 |---|---|
 | ESP32 Microcontroller | Main MCU — reads sensors, processes data, sends to cloud via Wi-Fi |
-| pH Sensor | Measures acidity / alkalinity of water |
 | TDS Sensor | Measures Total Dissolved Solids (ppm) |
 | Turbidity Sensor | Measures water clarity / suspended particles |
 | Temperature Sensor | Measures water temperature |
@@ -62,8 +61,8 @@ Small-scale packaged drinking water industries lack an affordable, compact, and 
 ```
 ┌────────────────────────────────────────────────┐
 │               SENSING LAYER                    │
-│  pH Sensor + TDS Sensor + Turbidity Sensor     │
-│            + Temperature Sensor                │
+│     |     TDS Sensor + Turbidity Sensor     │
+│                  
 └──────────────────┬─────────────────────────────┘
                    │ Analog signals → ADC pins
 ┌──────────────────▼─────────────────────────────┐
@@ -88,7 +87,7 @@ Small-scale packaged drinking water industries lack an affordable, compact, and 
 1. **Water Sample Interaction** — Sensors are placed directly in the water source
 2. **Sensor Measurement** — pH, TDS, and Turbidity sensors produce analog signals
 3. **Signal Processing** — ESP32 reads analog values via ADC pins
-4. **Data Conversion** — Raw signals converted to pH value, TDS (ppm), and Turbidity level
+4. **Data Conversion** — Raw signals converted to TDS (ppm), and Turbidity level
 5. **WQI Calculation** — All parameters combined into a single Water Quality Index score
 6. **Alarm Evaluation** — System checks values against Warning / Critical / Shutdown thresholds
 7. **Valve Control** — Solenoid valve automatically closes on shutdown-level contamination
